@@ -15,3 +15,11 @@ job:
   INPUT: "DOCDB_ENDPOINT,prod.roboshop.docdb.endpoint DOCDB_USERNAME,prod.roboshop.docdb.master_username DOCDB_PASSWORD,prod.roboshop.docdb.master_password"
   imageVersion: 2.0.6
 
+resources:
+  requests:
+    memory: "500Mi"
+    cpu: "250m"
+  limits:
+    memory: "750Mi"
+    cpu: "350m"
+
