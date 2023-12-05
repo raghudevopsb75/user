@@ -1,0 +1,17 @@
+appName: user
+replicas: 2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+initContainers:
+  enabled: true
+  imageVersion: 2.0.2
+  INPUT: "DOCUMENTDB,prod.roboshop.user.DOCUMENTDB MONGO_URL,prod.roboshop.user.MONGO_URL REDIS_HOST,prod.roboshop.user.REDIS_HOST"
+
+job:
+  enabled: true
+  INPUT: "DOCDB_ENDPOINT,prod.roboshop.docdb.endpoint DOCDB_USERNAME,prod.roboshop.docdb.master_username DOCDB_PASSWORD,prod.roboshop.docdb.master_password"
+  imageVersion: 2.0.6
+
